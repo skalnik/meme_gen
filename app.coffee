@@ -1,3 +1,3 @@
-exports.actions = (app, argv, options) ->
+module.exports = (app) ->
   app.get '/', (req, res) ->
     res.json {response: 'Success!'}, 200

@@ -1,7 +1,8 @@
 express = require 'express'
-routes = require '../app'
 
 app = express.createServer();
+
+routes = require('../app')(app)
 
 app.configure ->
   app.use express.logger()
