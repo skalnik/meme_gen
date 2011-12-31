@@ -15,17 +15,7 @@ app.configure 'development', ->
 app.configure 'production', ->
   app.use express.errorHandler()
 
-argv = []
-options = {}
-for arg in process.argv
-  if arg.substr(0, 2) == '--'
-    parts = arg.split '='
-    options[parts[0].substr(2).replace('-','_')] = parts[1] || true
-  else
-    argv.push arg
+port = process.env.port || 3000
 
-require('../app').actions app, argv, options
-port = options.port || 3000
-
-console.log "meme_gen server listening on port %d in %s mode", port, app.settings.env
-app.listen port
+app.listen port, ->
+  console.log "Listening on #{port}"

@@ -1,1 +1,1 @@
-web: ./node_modules/.bin/coffee bin/server -p $PORT
+web: ./node_modules/.bin/coffee bin/server
